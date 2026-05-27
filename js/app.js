@@ -1,229 +1,229 @@
-// ===== 精灵数据库 =====
+// ===== 精灵数据库 - 25只来自《洛克王国世界》的真实精灵 =====
 var SPRITES = [
     {
         id: 1,
-        name: '火花',
-        element: 'fire',
-        elementCN: '火系',
-        emoji: '🔥',
-        desc: '热情活泼的火系初始精灵，尾巴上燃烧着永不熄灭的小火苗，是无数小洛克最初的伙伴。',
-        image: 'images/sprites/huohua.png',
-    },
-    {
-        id: 2,
-        name: '水蓝蓝',
-        element: 'water',
-        elementCN: '水系',
-        emoji: '💧',
-        desc: '温柔可爱的小水灵，身体像果冻一样晶莹剔透，最擅长用水花治愈伙伴们。',
-        image: 'images/sprites/shuilanlan.png',
-    },
-    {
-        id: 3,
-        name: '喵喵',
-        element: 'grass',
-        elementCN: '草系',
-        emoji: '🌿',
-        desc: '三只初始精灵中最调皮的那个，头顶的小草会随着心情摇摆，生气时会甩出飞叶。',
-        image: 'images/sprites/miaomiao.png',
-    },
-    {
-        id: 4,
         name: '迪莫',
         element: 'light',
         elementCN: '光系',
         emoji: '⭐',
-        desc: '洛克王国最闪耀的明星精灵！拥有纯净的光之力量，是所有小洛克梦想中的伙伴。',
+        desc: '洛克王国最闪耀的明星精灵！拥有纯净的光之力量，是所有小洛克梦想中的第一伙伴。',
         image: 'images/sprites/dimo.png',
     },
     {
+        id: 2,
+        name: '火花',
+        element: 'fire',
+        elementCN: '火系',
+        emoji: '🔥',
+        desc: '热情活泼的火系初始精灵，尾巴上跳跃着永不熄灭的小火苗，是冒险旅途中最温暖的陪伴。',
+        image: 'images/sprites/huohua.png',
+    },
+    {
+        id: 3,
+        name: '水蓝蓝',
+        element: 'water',
+        elementCN: '水系',
+        emoji: '💧',
+        desc: '温柔可爱的小水灵，身体像果冻般晶莹剔透，最擅长用水花治愈和守护伙伴们。',
+        image: 'images/sprites/shuilanlan.png',
+    },
+    {
+        id: 4,
+        name: '喵喵',
+        element: 'grass',
+        elementCN: '草系',
+        emoji: '🌿',
+        desc: '三只初始精灵中最调皮的那个，头顶的小草会随着心情摇来摇去，生气时甩出飞叶快刀。',
+        image: 'images/sprites/miaomiao.png',
+    },
+    {
         id: 5,
-        name: '艾米',
-        element: 'light',
-        elementCN: '光系',
-        emoji: '☀️',
-        desc: '来自光之国的可爱精灵，温暖的光芒能驱散一切黑暗，是迪莫最好的朋友。',
-        image: 'images/sprites/aimi.png',
+        name: '阿米亚特',
+        element: 'normal',
+        elementCN: '地系',
+        emoji: '🪨',
+        desc: '身披坚硬岩石外壳的古代精灵，虽然看起来笨重，但是最忠实的伙伴，陪伴无数小洛克成长。',
+        image: 'images/sprites/amiyate.png',
     },
     {
         id: 6,
-        name: '圣光迪莫',
-        element: 'light',
-        elementCN: '光系',
-        emoji: '✨',
-        desc: '迪莫的圣光进化形态！神圣的光芒环绕全身，据说拥有净化一切邪恶的力量。',
-        image: 'images/sprites/shengGDimo.png',
+        name: '白发懒人',
+        element: 'normal',
+        elementCN: '普通系',
+        emoji: '🦥',
+        desc: '整天懒洋洋的白毛小可爱，但千万不要被它懒散的外表骗了，认真起来的实力超乎想象。',
+        image: 'images/sprites/baifalanren.png',
     },
     {
         id: 7,
-        name: '烈火战神',
-        element: 'fire',
-        elementCN: '火系',
-        emoji: '💥',
-        desc: '在烈焰中重生的火之战士，全身燃烧着不灭的斗志之火，是火系精灵的骄傲。',
-        image: 'images/sprites/liehuoZS.png',
+        name: '蹦蹦花',
+        element: 'grass',
+        elementCN: '草系',
+        emoji: '🌸',
+        desc: '蹦蹦种子的进化形态，头顶开出了大大的花朵，蹦跳之间洒下阵阵花香与治愈的花粉。',
+        image: 'images/sprites/bengbenghua.png',
     },
     {
         id: 8,
-        name: '武斗酷猫',
-        element: 'fight',
-        elementCN: '武系',
-        emoji: '🐱',
-        desc: '普通的家猫经过千锤百炼后觉醒的形态，拳法伶俐、身姿矫健的格斗大师。',
-        image: 'images/sprites/wudouKM.png',
+        name: '布鲁斯',
+        element: 'water',
+        elementCN: '水系',
+        emoji: '🐚',
+        desc: '住在贝壳里的小水灵，性格害羞又温柔，当它从壳里探出头来时，周围的水都会变得清澈。',
+        image: 'images/sprites/bulusi.png',
     },
     {
         id: 9,
-        name: '冰龙王',
-        element: 'ice',
-        elementCN: '冰系',
-        emoji: '❄️',
-        desc: '盘踞在极寒之地的冰之王者，吐息之间冻结万物，却有着一颗守护子民的温柔内心。',
-        image: 'images/sprites/binglongwang.png',
+        name: '彩蝶鲨',
+        element: 'water',
+        elementCN: '水系',
+        emoji: '🦈',
+        desc: '有着蝴蝶翅膀一样美丽鱼鳍的鲨鱼精灵，游弋于深海珊瑚丛中，是海底最优雅的猎手。',
+        image: 'images/sprites/caidiesha.png',
     },
     {
         id: 10,
-        name: '萌之王者',
-        element: 'fairy',
-        elementCN: '萌系',
-        emoji: '👑',
-        desc: '可爱就是正义！萌之王者用无法抵挡的可爱力量征服对手，是萌系精灵的顶点。',
-        image: 'images/sprites/mengzhiWZ.png',
-    },
-    {
-        id: 11,
-        name: '暗夜魔王',
-        element: 'dark',
-        elementCN: '恶魔系',
-        emoji: '🌙',
-        desc: '从深渊中崛起的暗夜君主，掌控着令人畏惧的黑暗力量，但内心深处渴望光明。',
-        image: 'images/sprites/anyeMW.png',
-    },
-    {
-        id: 12,
-        name: '机甲女王',
-        element: 'mecha',
-        elementCN: '机械系',
-        emoji: '🤖',
-        desc: '科技与力量的完美结合，驾驶着巨型机甲的机械女王，是洛克王国最强的火力输出。',
-        image: 'images/sprites/jijiaNW.png',
-    },
-    {
-        id: 13,
-        name: '上古战神',
-        element: 'fight',
-        elementCN: '武系',
-        emoji: '⚔️',
-        desc: '沉睡千年的远古战将，身披黄金战甲，一拳可碎山岳，是传说中的武系至尊。',
-        image: 'images/sprites/shangguZS.png',
-    },
-    {
-        id: 14,
-        name: '皇家狮鹫',
-        element: 'flying',
-        elementCN: '翼系',
-        emoji: '🦅',
-        desc: '翱翔于王城上空的皇家护卫，雪白的羽翼洒落星光，是忠诚与荣耀的象征。',
-        image: 'images/sprites/huangjiaSJ.png',
-    },
-    {
-        id: 15,
-        name: '帕尔萨斯',
-        element: 'dark',
-        elementCN: '恶魔系',
-        emoji: '🦇',
-        desc: '来历神秘的恶魔精灵，优雅而危险，嘴角总是挂着一丝捉摸不透的微笑。',
-        image: 'images/sprites/paersasi.png',
-    },
-    {
-        id: 16,
-        name: '雪影娃娃',
-        element: 'ice',
-        elementCN: '冰系',
-        emoji: '⛄',
-        desc: '在雪夜中诞生的冰娃娃，纯白的身体像雪一样柔软，但千万不要小看她冻结一切的能力。',
-        image: 'images/sprites/xueyingWW.png',
-    },
-    {
-        id: 17,
-        name: '九天龙尊',
-        element: 'dragon',
-        elementCN: '龙系',
-        emoji: '🐉',
-        desc: '腾飞于九天之上的巨龙，龙鳞闪耀着星辰的光辉，传说见到它的人都会获得好运。',
-        image: 'images/sprites/jiutianLZ.png',
-    },
-    {
-        id: 18,
-        name: '圣翼天使',
-        element: 'flying',
-        elementCN: '翼系',
-        emoji: '👼',
-        desc: '从天堂降临的六翼天使，洁白的羽翼能治愈一切伤痛，是希望与救赎的化身。',
-        image: 'images/sprites/shengyiTS.png',
-    },
-    {
-        id: 19,
-        name: '梦幻卡洛儿',
-        element: 'fairy',
-        elementCN: '萌系',
-        emoji: '🎀',
-        desc: '从童话中走出来的梦幻精灵，身边总是飘散着糖果和星屑，让见到她的人忘记烦恼。',
-        image: 'images/sprites/menghuanKLE.png',
-    },
-    {
-        id: 20,
-        name: '蓝焰行者',
-        element: 'fire',
-        elementCN: '火系',
-        emoji: '💎',
-        desc: '行走于荒野的独行侠，幽蓝色的火焰是他的标志，冷酷外表下藏着一颗炽热的心。',
-        image: 'images/sprites/lanyanXZ.png',
-    },
-    {
-        id: 21,
-        name: '雷霆虎',
+        name: '电咩咩',
         element: 'electric',
         elementCN: '电系',
         emoji: '⚡',
-        desc: '吼声如雷霆、奔跑如闪电的猛虎，是森林中最令人敬畏的猎手，电系精灵的骄傲。',
-        image: 'images/sprites/leitinghu.png',
+        desc: '毛茸茸的电气小羊，软绵绵的身体里蕴含着惊人的电力，开心时会噼里啪啦地放电。',
+        image: 'images/sprites/dianmiemie.png',
     },
     {
-        id: 22,
+        id: 11,
         name: '翡翠水母',
         element: 'water',
         elementCN: '水系',
         emoji: '🪼',
-        desc: '在深海中漂浮的翡翠色水母，触手散发着迷人的荧光，是海底世界最美的风景。',
-        image: 'images/sprites/feicuiSM.png',
+        desc: '如翡翠般碧绿通透的水母精灵，在深海中散发着迷人的幽光，触手轻舞如同水中芭蕾。',
+        image: 'images/sprites/feicuishuimu.png',
     },
     {
-        id: 23,
-        name: '龙之飞儿',
-        element: 'dragon',
-        elementCN: '龙系',
-        emoji: '🐲',
-        desc: '小龙仔的可爱形态，虽然体型娇小但血脉中流淌着真龙的力量，潜力不可限量。',
-        image: 'images/sprites/longzhiFE.png',
+        id: 12,
+        name: '粉耳星兔',
+        element: 'fairy',
+        elementCN: '萌系',
+        emoji: '🐰',
+        desc: '来自星空的粉色小兔子，长长的耳朵能接收到来自星星的信号，是最受欢迎的萌系精灵之一。',
+        image: 'images/sprites/fenerxingtu.png',
     },
     {
-        id: 24,
+        id: 13,
+        name: '格兰球',
+        element: 'grass',
+        elementCN: '草系',
+        emoji: '🌵',
+        desc: '格兰种子的进化形态，圆滚滚的身体像一个小绿球，防御力超强，是草系精灵中的坦克手。',
+        image: 'images/sprites/gelanqiu.png',
+    },
+    {
+        id: 14,
+        name: '乖乖鹄',
+        element: 'flying',
+        elementCN: '翼系',
+        emoji: '🕊️',
+        desc: '像天鹅一样优雅的白色大鸟，性格温顺乖巧，展开翅膀时翼尖洒落星屑般的洁白光羽。',
+        image: 'images/sprites/guaiguaihe.png',
+    },
+    {
+        id: 15,
+        name: '护主犬',
+        element: 'fire',
+        elementCN: '火系',
+        emoji: '🐕',
+        desc: '忠诚的火焰犬精灵，对主人无比忠心，鬃毛燃烧着熊熊火焰，是火系中最可靠的伙伴。',
+        image: 'images/sprites/huzhuquan.png',
+    },
+    {
+        id: 16,
+        name: '皇家狮鹫',
+        element: 'flying',
+        elementCN: '翼系',
+        emoji: '🦅',
+        desc: '翱翔于王城上空的皇家护卫，雪白羽翼之下藏着利爪，是忠诚与荣耀的至高象征。',
+        image: 'images/sprites/huangjiashijiu.png',
+    },
+    {
+        id: 17,
+        name: '九尾狐',
+        element: 'fire',
+        elementCN: '火系',
+        emoji: '🦊',
+        desc: '修炼千年的狐仙精灵，九条尾巴上燃烧着青蓝色的狐火，优雅而强大，传说能预知未来。',
+        image: 'images/sprites/jiuweihu.png',
+    },
+    {
+        id: 18,
         name: '灵狐',
         element: 'normal',
         elementCN: '普通系',
-        emoji: '🦊',
-        desc: '拥有九条尾巴的灵性白狐，优雅灵动，传说她已经修炼了千年，能洞悉人心。',
+        emoji: '🌟',
+        desc: '拥有灵性的白狐精灵，身姿优雅灵动如风，据说修炼千年后能洞悉世间一切人心。',
         image: 'images/sprites/linghu.png',
     },
     {
-        id: 25,
-        name: '恩佐',
+        id: 19,
+        name: '魔力猫',
+        element: 'grass',
+        elementCN: '草系',
+        emoji: '🐱',
+        desc: '喵喵的最终进化形态，拥有强大的自然魔力，头顶的花朵完全绽放，是草系精灵的巅峰。',
+        image: 'images/sprites/molimao.png',
+    },
+    {
+        id: 20,
+        name: '帕尔萨斯',
         element: 'dark',
         elementCN: '恶魔系',
-        emoji: '🎩',
-        desc: '洛克王国最神秘的反派角色，天才魔法师，虽然行事偏激但有着自己的信念与坚持。',
-        image: 'images/sprites/enzuo.png',
+        emoji: '🌙',
+        desc: '来历神秘而优雅的恶魔精灵，苍白的面容下隐藏着强大的黑暗之力，嘴角总挂着一丝微笑。',
+        image: 'images/sprites/paersasi.png',
+    },
+    {
+        id: 21,
+        name: '雪影娃娃',
+        element: 'ice',
+        elementCN: '冰系',
+        emoji: '❄️',
+        desc: '在雪夜中诞生的冰之精灵，纯白身躯柔软如雪，轻轻挥手就能冻结一整片湖面。',
+        image: 'images/sprites/xueyingwawa.png',
+    },
+    {
+        id: 22,
+        name: '伊兰亚龙',
+        element: 'dragon',
+        elementCN: '龙系',
+        emoji: '🐉',
+        desc: '来自远古的亚龙精灵，身披翠绿鳞甲，虽然还是幼年形态，但龙之血脉中蕴含着无穷潜力。',
+        image: 'images/sprites/yilanyalong.png',
+    },
+    {
+        id: 23,
+        name: '音速犬',
+        element: 'fire',
+        elementCN: '火系',
+        emoji: '🔥',
+        desc: '护主犬的进化形态，奔跑速度快如音速，所过之处只留下一道火焰残影，是速度与力量的化身。',
+        image: 'images/sprites/yinsuquan.png',
+    },
+    {
+        id: 24,
+        name: '烈火战神',
+        element: 'fire',
+        elementCN: '火系',
+        emoji: '💥',
+        desc: '在烈焰中重生的火之战神，全身燃烧着不灭的斗志之火，一拳可焚烧整片黑暗。',
+        image: 'images/sprites/liehuozhanshen.png',
+    },
+    {
+        id: 25,
+        name: '圣水守护',
+        element: 'water',
+        elementCN: '水系',
+        emoji: '💎',
+        desc: '水蓝蓝的最终进化形态，圣洁的水之守护者，身体化作纯净的生命之水，治愈世间一切伤痛。',
+        image: 'images/sprites/shengshuishouhu.png',
     },
 ];
 
@@ -259,7 +259,6 @@ function spawnParticles(x, y, count) {
 
         container.appendChild(particle);
 
-        // 自动清理
         (function (p) {
             setTimeout(function () {
                 if (p.parentNode) p.parentNode.removeChild(p);
@@ -304,17 +303,14 @@ function onSubmit() {
         return;
     }
 
-    // 生成魔法粒子
     var btn = document.getElementById('submit-btn');
     var btnRect = btn.getBoundingClientRect();
     spawnParticles(btnRect.left + btnRect.width / 2, btnRect.top + btnRect.height / 2, 20);
 
-    // 更新 URL 参数并显示结果
     var url = new URL(window.location);
     url.searchParams.set('name', name);
     window.history.pushState({}, '', url);
 
-    // 稍作延迟让粒子动画先播放
     setTimeout(function () {
         showResult(name);
     }, 300);
@@ -367,35 +363,33 @@ function showResult(name) {
     badge.textContent = sprite.elementCN;
     badge.className = 'element-badge ' + sprite.element;
 
-    // 显示 CSS 精灵头像
+    // 优先显示真实图片
     var avatar = document.getElementById('sprite-avatar');
-    var avatarEmoji = avatar.querySelector('.sprite-emoji');
     var img = document.getElementById('sprite-image');
     var glow = document.querySelector('.sprite-glow');
 
-    avatar.className = 'sprite-avatar ' + sprite.element;
-    avatarEmoji.textContent = sprite.emoji || ELEMENT_EMOJI[sprite.element] || '⭐';
-    avatar.style.display = 'flex';
-    img.style.display = 'none';
+    // 先尝试加载图片
+    img.src = sprite.image;
+    img.alt = sprite.name;
 
-    // 更新光晕颜色
-    glow.style.background = ELEMENT_GLOW[sprite.element] || '';
-
-    // 尝试加载真实图片
     var testImg = new Image();
     testImg.onload = function () {
-        img.src = sprite.image;
-        img.alt = sprite.name;
         img.style.display = 'block';
         avatar.style.display = 'none';
+        glow.style.background = ELEMENT_GLOW[sprite.element] || '';
     };
     testImg.onerror = function () {
-        // 保持 CSS 头像
+        // 图片加载失败，显示CSS头像
+        var avatarEmoji = avatar.querySelector('.sprite-emoji');
+        avatar.className = 'sprite-avatar ' + sprite.element;
+        avatarEmoji.textContent = sprite.emoji || ELEMENT_EMOJI[sprite.element] || '⭐';
+        avatar.style.display = 'flex';
+        img.style.display = 'none';
+        glow.style.background = ELEMENT_GLOW[sprite.element] || '';
     };
     testImg.src = sprite.image;
 
     showPage('result');
-
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -471,14 +465,13 @@ function showToast(message) {
     }, 2200);
 }
 
-// ===== 输入框回车事件 =====
+// ===== 输入框事件 =====
 document.getElementById('name-input').addEventListener('keydown', function (e) {
     if (e.key === 'Enter') {
         onSubmit();
     }
 });
 
-// 输入框点击时生成少量粒子
 document.getElementById('name-input').addEventListener('focus', function () {
     var rect = this.getBoundingClientRect();
     spawnParticles(rect.left + rect.width / 2, rect.top + rect.height / 2, 8);
