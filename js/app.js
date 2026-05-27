@@ -1,5 +1,5 @@
 // ===== 精灵数据库 =====
-const SPRITES = [
+var SPRITES = [
     {
         id: 1,
         name: '火花',
@@ -237,6 +237,37 @@ function hashName(name) {
     return Math.abs(hash) % SPRITES.length;
 }
 
+// ===== 魔法粒子系统 =====
+function spawnParticles(x, y, count) {
+    var container = document.getElementById('particles');
+    if (!container) return;
+
+    var types = ['star', 'dot', 'spark', 'dot', 'star', 'spark'];
+    var colors = ['#FF8BA7', '#7EC8E3', '#F5D67B', '#A8D870', '#FF9F7C'];
+
+    for (var i = 0; i < count; i++) {
+        var particle = document.createElement('div');
+        var type = types[Math.floor(Math.random() * types.length)];
+        var color = colors[Math.floor(Math.random() * colors.length)];
+
+        particle.className = 'particle ' + type;
+        particle.style.left = (x + (Math.random() - 0.5) * 80) + 'px';
+        particle.style.top = (y + (Math.random() - 0.5) * 40) + 'px';
+        particle.style.background = type === 'dot' || type === 'spark' ? color : '';
+        particle.style.animationDuration = (3 + Math.random() * 4) + 's';
+        particle.style.animationDelay = Math.random() * 0.5 + 's';
+
+        container.appendChild(particle);
+
+        // 自动清理
+        (function (p) {
+            setTimeout(function () {
+                if (p.parentNode) p.parentNode.removeChild(p);
+            }, 5000);
+        })(particle);
+    }
+}
+
 // ===== 页面切换 =====
 var inputPage = document.getElementById('input-page');
 var resultPage = document.getElementById('result-page');
@@ -264,24 +295,32 @@ function onSubmit() {
 
     if (!name) {
         input.focus();
-        input.style.borderColor = '#FFB8D0';
-        input.style.boxShadow = '0 0 0 4px rgba(255, 150, 180, 0.15)';
+        input.style.borderColor = '#FF8BA7';
+        input.style.boxShadow = '0 0 0 6px rgba(255,139,167,0.12)';
         setTimeout(function () {
-            input.style.borderColor = '#F0DCE8';
+            input.style.borderColor = '#F0E0E5';
             input.style.boxShadow = 'none';
-        }, 600);
+        }, 800);
         return;
     }
+
+    // 生成魔法粒子
+    var btn = document.getElementById('submit-btn');
+    var btnRect = btn.getBoundingClientRect();
+    spawnParticles(btnRect.left + btnRect.width / 2, btnRect.top + btnRect.height / 2, 20);
 
     // 更新 URL 参数并显示结果
     var url = new URL(window.location);
     url.searchParams.set('name', name);
     window.history.pushState({}, '', url);
 
-    showResult(name);
+    // 稍作延迟让粒子动画先播放
+    setTimeout(function () {
+        showResult(name);
+    }, 300);
 }
 
-// ===== 元素表情映射 =====
+// ===== 元素表情和光晕映射 =====
 var ELEMENT_EMOJI = {
     fire: '🔥',
     water: '💧',
@@ -298,21 +337,20 @@ var ELEMENT_EMOJI = {
     mecha: '⚙️',
 };
 
-// ===== 元素光晕颜色 =====
 var ELEMENT_GLOW = {
-    fire: 'radial-gradient(circle, rgba(255,109,58,0.35) 0%, transparent 70%)',
-    water: 'radial-gradient(circle, rgba(66,165,245,0.35) 0%, transparent 70%)',
-    grass: 'radial-gradient(circle, rgba(102,187,106,0.35) 0%, transparent 70%)',
-    light: 'radial-gradient(circle, rgba(255,238,88,0.4) 0%, transparent 70%)',
-    dark: 'radial-gradient(circle, rgba(126,87,194,0.35) 0%, transparent 70%)',
-    ice: 'radial-gradient(circle, rgba(79,195,247,0.35) 0%, transparent 70%)',
-    dragon: 'radial-gradient(circle, rgba(171,71,188,0.35) 0%, transparent 70%)',
-    fairy: 'radial-gradient(circle, rgba(240,98,146,0.3) 0%, transparent 70%)',
-    flying: 'radial-gradient(circle, rgba(144,164,174,0.3) 0%, transparent 70%)',
-    fight: 'radial-gradient(circle, rgba(255,112,67,0.35) 0%, transparent 70%)',
-    electric: 'radial-gradient(circle, rgba(255,202,40,0.35) 0%, transparent 70%)',
-    normal: 'radial-gradient(circle, rgba(189,189,189,0.3) 0%, transparent 70%)',
-    mecha: 'radial-gradient(circle, rgba(120,144,156,0.3) 0%, transparent 70%)',
+    fire: 'radial-gradient(circle, rgba(255,138,101,0.3) 0%, transparent 70%)',
+    water: 'radial-gradient(circle, rgba(79,195,247,0.3) 0%, transparent 70%)',
+    grass: 'radial-gradient(circle, rgba(129,199,132,0.3) 0%, transparent 70%)',
+    light: 'radial-gradient(circle, rgba(255,238,88,0.35) 0%, transparent 70%)',
+    dark: 'radial-gradient(circle, rgba(149,117,205,0.3) 0%, transparent 70%)',
+    ice: 'radial-gradient(circle, rgba(128,222,234,0.3) 0%, transparent 70%)',
+    dragon: 'radial-gradient(circle, rgba(186,104,200,0.3) 0%, transparent 70%)',
+    fairy: 'radial-gradient(circle, rgba(240,98,146,0.25) 0%, transparent 70%)',
+    flying: 'radial-gradient(circle, rgba(176,190,197,0.25) 0%, transparent 70%)',
+    fight: 'radial-gradient(circle, rgba(255,138,101,0.3) 0%, transparent 70%)',
+    electric: 'radial-gradient(circle, rgba(255,213,79,0.3) 0%, transparent 70%)',
+    normal: 'radial-gradient(circle, rgba(224,224,224,0.25) 0%, transparent 70%)',
+    mecha: 'radial-gradient(circle, rgba(144,164,174,0.25) 0%, transparent 70%)',
 };
 
 // ===== 显示结果 =====
@@ -325,9 +363,9 @@ function showResult(name) {
     document.getElementById('sprite-name').textContent = displayEmoji + ' ' + sprite.name;
     document.getElementById('sprite-desc').textContent = sprite.desc;
 
-    var el = document.getElementById('sprite-element');
-    el.textContent = sprite.elementCN;
-    el.className = 'sprite-element ' + sprite.element;
+    var badge = document.getElementById('sprite-element');
+    badge.textContent = sprite.elementCN;
+    badge.className = 'element-badge ' + sprite.element;
 
     // 显示 CSS 精灵头像
     var avatar = document.getElementById('sprite-avatar');
@@ -340,10 +378,10 @@ function showResult(name) {
     avatar.style.display = 'flex';
     img.style.display = 'none';
 
-    // 更新光晕颜色以匹配元素
+    // 更新光晕颜色
     glow.style.background = ELEMENT_GLOW[sprite.element] || '';
 
-    // 尝试加载真实图片，成功则替换 CSS 头像
+    // 尝试加载真实图片
     var testImg = new Image();
     testImg.onload = function () {
         img.src = sprite.image;
@@ -352,7 +390,7 @@ function showResult(name) {
         avatar.style.display = 'none';
     };
     testImg.onerror = function () {
-        // 保持 CSS 头像显示
+        // 保持 CSS 头像
     };
     testImg.src = sprite.image;
 
@@ -376,10 +414,9 @@ function onRetry() {
 function onShare() {
     var url = window.location.href;
 
-    // 尝试 Web Share API（移动端）
     if (navigator.share) {
         navigator.share({
-            title: '洛克王国 - 你的本命精灵',
+            title: '洛克王国：世界 - 你的本命精灵',
             text: '来看看你的本命洛克王国精灵是谁？',
             url: url,
         }).catch(function () {
@@ -393,12 +430,11 @@ function onShare() {
 function copyToClipboard(text) {
     if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text).then(function () {
-            showToast('链接已复制，快去分享吧 ✨');
+            showToast('链接已复制 ✦ 分享给朋友吧');
         }).catch(function () {
             showToast('分享链接：\n' + text);
         });
     } else {
-        // Fallback
         var textarea = document.createElement('textarea');
         textarea.value = text;
         textarea.style.position = 'fixed';
@@ -407,7 +443,7 @@ function copyToClipboard(text) {
         textarea.select();
         try {
             document.execCommand('copy');
-            showToast('链接已复制，快去分享吧 ✨');
+            showToast('链接已复制 ✦ 分享给朋友吧');
         } catch (e) {
             showToast('分享链接：\n' + text);
         }
@@ -424,7 +460,6 @@ function showToast(message) {
     toast.textContent = message;
     document.body.appendChild(toast);
 
-    // Trigger reflow
     toast.offsetHeight;
     toast.classList.add('show');
 
@@ -433,7 +468,7 @@ function showToast(message) {
         setTimeout(function () {
             if (toast.parentNode) toast.parentNode.removeChild(toast);
         }, 300);
-    }, 2000);
+    }, 2200);
 }
 
 // ===== 输入框回车事件 =====
@@ -441,6 +476,12 @@ document.getElementById('name-input').addEventListener('keydown', function (e) {
     if (e.key === 'Enter') {
         onSubmit();
     }
+});
+
+// 输入框点击时生成少量粒子
+document.getElementById('name-input').addEventListener('focus', function () {
+    var rect = this.getBoundingClientRect();
+    spawnParticles(rect.left + rect.width / 2, rect.top + rect.height / 2, 8);
 });
 
 // ===== 页面初始化 =====
