@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>洛克王国 - 你的本命精灵</title>
+    <meta name="description" content="输入你的名字，发现与你最匹配的洛克王国精灵！">
+    <meta property="og:title" content="洛克王国 - 你的本命精灵">
+    <meta property="og:description" content="输入你的名字，发现与你最匹配的洛克王国精灵！">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://luoke.qq.com/favicon.ico">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⭐</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 装饰元素 -->
+    <div class="decorations" aria-hidden="true">
+        <span class="deco deco-star" style="top:8%;left:10%">✦</span>
+        <span class="deco deco-star" style="top:15%;right:12%">✧</span>
+        <span class="deco deco-paw" style="top:30%;left:5%">🐾</span>
+        <span class="deco deco-star" style="top:45%;right:8%">✦</span>
+        <span class="deco deco-paw" style="top:60%;left:8%">🐾</span>
+        <span class="deco deco-star" style="top:75%;right:15%">✧</span>
+        <span class="deco deco-star" style="top:85%;left:15%">✦</span>
+        <span class="deco deco-cloud" style="top:20%;left:50%">☁</span>
+        <span class="deco deco-cloud" style="top:55%;right:5%">☁</span>
+    </div>
+
+    <!-- 主容器 -->
+    <main class="container">
+        <!-- 输入页面 -->
+        <section id="input-page" class="page active">
+            <div class="card">
+                <div class="logo-area">
+                    <div class="logo-icon">⚜</div>
+                    <h1 class="title">洛克王国</h1>
+                    <p class="subtitle">找出属于你的本命精灵</p>
+                </div>
+                <div class="input-area">
+                    <label for="name-input" class="input-label">请输入你的名字</label>
+                    <input
+                        type="text"
+                        id="name-input"
+                        class="name-input"
+                        placeholder="在这里输入名字..."
+                        maxlength="20"
+                        autocomplete="off"
+                    >
+                    <button id="submit-btn" class="submit-btn" onclick="onSubmit()">
+                        <span>✨ 寻找我的精灵 ✨</span>
+                    </button>
+                </div>
+            </div>
+            <p class="footer-hint">同一名字永远对应同一只精灵哦～</p>
+        </section>
+
+        <!-- 结果页面 -->
+        <section id="result-page" class="page">
+            <div class="card result-card">
+                <p class="result-prefix">命运的羁绊指引着</p>
+                <h2 id="result-name-display" class="result-name-display"></h2>
+                <div class="sprite-display">
+                    <div class="sprite-glow"></div>
+                    <div id="sprite-avatar" class="sprite-avatar">
+                        <span class="sprite-emoji"></span>
+                    </div>
+                    <img
+                        id="sprite-image"
+                        class="sprite-image"
+                        src=""
+                        alt="精灵图片"
+                        style="display:none"
+                    >
+                </div>
+                <h2 id="sprite-name" class="sprite-name"></h2>
+                <p id="sprite-desc" class="sprite-desc"></p>
+                <span id="sprite-element" class="sprite-element"></span>
+                <div class="result-actions">
+                    <button class="retry-btn" onclick="onRetry()">
+                        ↺ 再测一次
+                    </button>
+                    <button class="share-btn" onclick="onShare()">
+                        📤 分享给朋友
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
